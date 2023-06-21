@@ -8,9 +8,63 @@ if (isset($_GET['id_peminjaman'])) {
 <html>
 <head>
    <?php echo (isset($_GET['id_peminjaman'])) ? "<title>Edit Data Peminjaman</title>": "<title>Tambah Data Peminjaman</title>" ?> 
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
-
     <h2>Form Peminjaman</h2>
     <form action="" method="post">
     <?php
@@ -23,17 +77,18 @@ if (isset($_GET['id_peminjaman'])) {
         <table>
             <tr>
                 <td>ID Peminjaman</td>
-                <td><input type="text" name="id_Peminjaman" <?php echo (isset($_GET['id_peminjaman'])) ?  "value = " . $res["id_peminjaman"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="id_Peminjaman" value="<?php echo $res['id_peminjaman']; ?>" required></td>
             </tr>
+            <tr>
                 <td>Tanggal Peminjaman</td>
-                <td><input type="datetime-local" name="pinjam" <?php echo (isset($_GET['id_peminjaman'])) ?  "value = " . $res["tgl_pinjam"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="datetime-local" name="pinjam" value="<?php echo $res['tgl_pinjam']; ?>" required></td>
             </tr>
             <tr>
                 <td>Tanggal Kembalian</td>
-                <td><input type="datetime-local" name="kembali" <?php echo (isset($_GET['id_peminjaman'])) ?  "value = " . $res["tgl_kembali"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="datetime-local" name="kembali" value="<?php echo $res['tgl_kembali']; ?>" required></td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <?php 
                     if (isset($_GET['id_peminjaman'])) {
                         echo "<button type=\"submit\" name=\"update\">Edit</button>";
@@ -51,17 +106,18 @@ if (isset($_GET['id_peminjaman'])) {
         <table>
             <tr>
                 <td>ID Peminjaman</td>
-                <td><input type="text" name="id_Peminjaman" <?php echo (isset($_GET['id_peminjaman'])) ?  "value = " . $res["id_peminjaman"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="id_Peminjaman" required></td>
             </tr>
+            <tr>
                 <td>Tanggal Peminjaman</td>
-                <td><input type="datetime-local" name="pinjam" <?php echo (isset($_GET['id_peminjaman'])) ?  "value = " . $res["tgl_pinjam"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="datetime-local" name="pinjam" required></td>
             </tr>
             <tr>
                 <td>Tanggal Kembalian</td>
-                <td><input type="datetime-local" name="kembali" <?php echo (isset($_GET['id_peminjaman'])) ?  "value = " . $res["tgl_kembali"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="datetime-local" name="kembali" required></td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <?php 
                     if (isset($_GET['id_peminjaman'])) {
                         echo "<button type=\"submit\" name=\"update\">Edit</button>";

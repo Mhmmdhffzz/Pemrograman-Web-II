@@ -7,9 +7,64 @@ if (isset($_GET['id_member'])) {
 <html>
 <head>
    <?php echo (isset($_GET['id_member'])) ? "<title>Edit Member</title>": "<title>Tambah Member</title>" ?> 
+   <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table td {
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="datetime-local"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: #4CAF50;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #4CAF50;
+        }
+    </style>
 </head>
 <body>
-
     <h2>Form Member</h2>
     <form action="" method="post">
     <?php
@@ -23,30 +78,30 @@ if (isset($_GET['id_member'])) {
         <table>
             <tr>
                 <td>ID Member</td>
-                <td><input type="text" name="id_member" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["id_member"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="id_member" value="<?php echo $res['id_member']; ?>" required></td>
             </tr>
             <tr>
                 <td>Nama Member</td>
-                <td><input type="text" name="Nama" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["nama_member"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="Nama" value="<?php echo $res['nama_member']; ?>" required></td>
             </tr>
             <tr>
                 <td>Nomor Member</td>
-                <td><input type="text" name="nomor" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["nomor_member"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="nomor" value="<?php echo $res['nomor_member']; ?>" required></td>
             </tr>
             <tr>
                 <td>Alamat</td>
-                <td><input type="text" name="alamat" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["alamat"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="alamat" value="<?php echo $res['alamat']; ?>" required></td>
             </tr>
             <tr>
                 <td>Tanggal Daftar</td>
-                <td><input type="datetime-local" name="daftar" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["tgl_mendaftar"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="datetime-local" name="daftar" value="<?php echo $res['tgl_mendaftar']; ?>" required></td>
             </tr>
             <tr>
                 <td>Tanggal bayar Terakhir</td>
-                <td><input type="date" name="bayar" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["tgl_terakhir_bayar"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="date" name="bayar" value="<?php echo $res['tgl_terakhir_bayar']; ?>" required></td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <?php 
                     if (isset($_GET['id_member'])) {
                         echo "<button type=\"submit\" name=\"update\">Edit</button>";
@@ -64,30 +119,30 @@ if (isset($_GET['id_member'])) {
         <table>
             <tr>
                 <td>ID Member</td>
-                <td><input type="text" name="id_member" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["id_member"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="id_member" required></td>
             </tr>
             <tr>
                 <td>Nama Member</td>
-                <td><input type="text" name="Nama" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["nama_member"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="Nama" required></td>
             </tr>
             <tr>
                 <td>Nomor Member</td>
-                <td><input type="text" name="nomor" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["nomor_member"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="nomor" required></td>
             </tr>
             <tr>
                 <td>Alamat</td>
-                <td><input type="text" name="alamat" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["alamat"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="text" name="alamat" required></td>
             </tr>
             <tr>
                 <td>Tanggal Daftar</td>
-                <td><input type="datetime-local" name="daftar" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["tgl_mendaftar"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="datetime-local" name="daftar" required></td>
             </tr>
             <tr>
                 <td>Tanggal bayar Terakhir</td>
-                <td><input type="date" name="bayar" <?php echo (isset($_GET['id_member'])) ?  "value = " . $res["tgl_terakhir_bayar"] . "" : "value = '' "; ?> required> <br></td>
+                <td><input type="date" name="bayar" required></td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2">
                     <?php 
                     if (isset($_GET['id_member'])) {
                         echo "<button type=\"submit\" name=\"update\">Edit</button>";

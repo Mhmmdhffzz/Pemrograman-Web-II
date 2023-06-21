@@ -11,57 +11,46 @@
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
-    <title>Bootstrap Example</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .container {
+            padding: auto;
+            text-align: center;
+        }
+
+        a {
+            padding: 20px 40px;
+            color: #000;
+            text-decoration: none;
+        }
+
+        .img img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .goals-container a:hover {
+            color: crimson;
+        }
+    </style>
 </head>
-<style>
-    .container {
-        
-        padding: auto;
-        text-align: center;
-    }
-
-    a{
-        padding: 46px;
-        color: #000;
-    }
-
-    .img img{
-        max-width: fit-content ;
-    
-    }
-
-    .goals-container a:hover{
-        color: crimson;
-    }
-    
-
-
-
-</style>
 <body>
-<div class="card" style="width: fit-content; margin:auto; margin-top: 10%;">
-<div class="card-body">
-
-   
-    <div class="container">
-        <div class="img">
-            <img src="https://img.freepik.com/premium-photo/reading-books-concept-mixed-media_641298-10411.jpg?w=1060">
-
-        </div>
-        <div class="login-container">
-            <form action="" method="POST">
-                <br><br>
-                <h2>SELAMAT DATANG DI PERPUS</h2>
-                <div class="goals-container">
-                <button type="button" class="btn btn-primary"><a href="Buku.php">BUKU</a></button>
-                <button type="button" class="btn btn-primary"><a href="Member.php">MEMBER</a></button>
-                <button type="button" class="btn btn-primary"><a href="Peminjaman.php">PINJAM</a></button>
+    <div class="card" style="width: fit-content; margin:auto; margin-top: 10%;">
+        <div class="card-body">
+            <div class="container">
+                <div class="img">
+                    <img src="https://img.freepik.com/premium-photo/reading-books-concept-mixed-media_641298-10411.jpg?w=1060" alt="Library Image">
                 </div>
-            </form>
+                <div class="login-container">
+                    <br><br>
+                    <h2>SELAMAT DATANG DI PERPUS</h2>
+                    <div class="goals-container">
+                        <button type="button" class="btn btn-primary"><a href="Buku.php">BUKU</a></button>
+                        <button type="button" class="btn btn-primary"><a href="Member.php">MEMBER</a></button>
+                        <button type="button" class="btn btn-primary"><a href="Peminjaman.php">PINJAM</a></button>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    </div>
     </div>
     <script src="js/script.js"></script>
 </body>
